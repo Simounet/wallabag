@@ -231,12 +231,7 @@
                 </li>
                 {% if entry.tags|length > 0 %}
                     <li class="tool-item">
-                        {% for tag in entry.tags %}
-                            <div class="chip">
-                                <a href="{{ path('tag_entries', {'slug': tag.slug}) }}">{{ tag.label }}</a>
-                                <a href="{{ path('remove_tag', { 'entry': entry.id, 'tag': tag.id }) }}"><i class="material-icons">delete</i></a>
-                            </div>
-                        {% endfor %}
+                        {% include "@WallabagCore/themes/material/Entry/_tags.html.twig" with {'entryId': entry.id, 'tags': entry.tags} only %}
                     </li>
                 {% endif %}
             </ul>

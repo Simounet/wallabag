@@ -1,0 +1,12 @@
+{% if tags | length > 0 %}
+    <ul>
+        {% for tag in tags %}
+            <li class="chip">
+                <a href="{{ path('tag_entries', {'slug': tag.slug}) }}">{{ tag.label }}</a>
+                {% if entryId|default(false) %}
+                    <a href="{{ path('remove_tag', { 'entry': entryId, 'tag': tag.id }) }}"><i class="material-icons">delete</i></a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

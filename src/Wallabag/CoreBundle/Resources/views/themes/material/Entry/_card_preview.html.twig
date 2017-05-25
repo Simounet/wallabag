@@ -35,12 +35,7 @@
         </span>
 
         <p>{{ entry.content|striptags|slice(0, 250)|raw }}&hellip;</p>
-
-        <ul class="card-entry-labels-hidden">
-            {% for tag in entry.tags %}
-                <li><a href="{{ path('tag_entries', {'slug': tag.slug}) }}">{{ tag.label }}</a></li>
-            {% endfor %}
-        </ul>
+        {% include "@WallabagCore/themes/material/Entry/_tags.html.twig" with {'tags': entry.tags} only %}
     </div>
 
     {% include "@WallabagCore/themes/material/Entry/_card_actions.html.twig" with {'entry': entry} only %}

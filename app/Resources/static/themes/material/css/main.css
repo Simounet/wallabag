@@ -467,6 +467,7 @@ main ul.row {
 @media only screen and (min-width: 600px) {
     .data .card .card-body {
       height: 19em;
+      overflow-y: auto;
     }
 }
 
@@ -821,14 +822,18 @@ a.original {
   margin-right: 5px;
 }
 
-#article aside .chip {
+.chip {
   background-color: rgba(0, 151, 167, 0.85);
-  padding: 0 15px 0 10px;
-  margin: auto 2px;
+  padding: 0 10px;
+  margin: 3px 2px;
 }
 
-#article aside .chip a,
-#article aside .chip i {
+.chip .material-icons {
+  margin-right: 8px;
+}
+
+.chip a,
+.chip .material-icons {
   color: #fff;
 }
 
