@@ -461,17 +461,35 @@ main ul.row {
 }
 
 .data .card .card-body {
-  height: 19em;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+    .data .card .card-body {
+      height: 19em;
+    }
+}
+
+.card-stacked .card-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card .card-content .card-title,
 .card .card-reveal .card-title {
   line-height: 22.8px;
-  max-height: 80px;
   font-size: 19px;
   font-family: roberto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #313131;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .card-stacked .card-title {
+    margin-bottom: 10px;
+  }
 }
 
 .card .card-content .activator,
@@ -544,7 +562,7 @@ a.original {
 .card-entry-labels a,
 .card-tag-labels a,
 .card-entry-labels-hidden a,
-.tag-list .chip a {
+.chip a {
   text-decoration: none;
   font-weight: normal;
   color: #fff;
@@ -567,16 +585,12 @@ a.original {
   line-height: 24px;
 }
 
-.card .card-action ul.tools li a.tool {
+.tools {
+  display: flex;
+}
+
+.card .card-action .tool {
   margin-right: 5px !important;
-}
-
-.card-stacked:hover ul.tools-list {
-  display: block;
-}
-
-.card-stacked ul.tools-list {
-  display: none;
 }
 
 .card .card-action a {
@@ -588,9 +602,18 @@ a.original {
   color: #fff;
 }
 
-.card .card-action .reading-time {
+.reading-time-item {
   display: inline-flex;
-  vertical-align: middle;
+  margin-right: 5px;
+  align-items: center;
+}
+
+.reading-time-item:last-of-type {
+  margin-right: 0;
+}
+
+.reading-time-item .material-icons {
+  margin-right: 3px;
 }
 
 .quickstart .card .card-action a,
@@ -769,25 +792,33 @@ a.original {
   z-index: 9999;
 }
 
-#article aside .tools {
+.article-tools {
   font-size: 0.8em;
   display: flex;
   flex-flow: row wrap;
   margin: 0 auto;
+  align-items: center;
 }
 
-article aside .tools li {
+.article-tools li {
   display: inline-flex;
-  vertical-align: middle;
 }
 
-#article aside .tools a {
+.article-tools a {
   color: #000;
   text-decoration: none;
 }
 
-.tag-list {
-  margin: 0 15px 10px;
+.tool-item {
+  margin-right: 20px;
+}
+
+.tool-item:last-of-type {
+  margin-right: 0;
+}
+
+.tool-item .material-icons {
+  margin-right: 5px;
 }
 
 #article aside .chip {

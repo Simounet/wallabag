@@ -6,7 +6,8 @@
                     {{ entry.title| striptags | truncate(120, true, '…') | raw }}
                 </a>
             </span>
-            {% include "@WallabagCore/themes/material/Entry/_card_actions_tools.html.twig" with {'entry': entry, 'classExtra': ' tools-list'} only %}
+            {% include "@WallabagCore/themes/material/Entry/_card_actions_reading_time.html.twig" with {'entry': entry} only %}
+            {% include "@WallabagCore/themes/material/Entry/_card_actions_tools.html.twig" with {'entry': entry} only %}
         </div>
     </div>
 </div>

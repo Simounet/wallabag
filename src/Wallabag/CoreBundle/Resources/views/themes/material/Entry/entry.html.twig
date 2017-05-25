@@ -212,26 +212,25 @@
             <h1>{{ entry.title|striptags|raw }} <a href="{{ path('edit', { 'id': entry.id }) }}" title="{{ 'entry.view.edit_title'|trans }}">✎</a></h1>
         </header>
         <aside>
-            <ul class="tools">
-                <li>
+            <ul class="article-tools">
+                <li class="tool-item">
                     {% include "@WallabagCore/themes/material/Entry/_reading_time.html.twig" with {'entry': entry} only %}
                 </li>
-                <li>
-                    <i class="material-icons" title="{{ 'entry.view.created_at'|trans }}">today</i>
-                    {{ entry.createdAt|date('Y-m-d') }}
+                <li class="tool-item">
+                    {% include "@WallabagCore/themes/material/Entry/_created_at.html.twig" with {'entry': entry} only %}
                 </li>
-                <li>
+                <li class="tool-item">
                     <i class="material-icons link">link</i>
                     <a href="{{ entry.url|e }}" target="_blank" title="{{ 'entry.view.original_article'|trans }} : {{ entry.title|striptags }}" class="tool">
                         {{ entry.domainName|removeWww }}
                     </a>
                 </li>
-                <li>
+                <li class="tool-item">
                     <i class="material-icons link">comment</i>
                     {{ 'entry.view.annotations_on_the_entry'|transchoice(entry.annotations | length) }}
                 </li>
                 {% if entry.tags|length > 0 %}
-                    <li class="tag-list">
+                    <li class="tool-item">
                         {% for tag in entry.tags %}
                             <div class="chip">
                                 <a href="{{ path('tag_entries', {'slug': tag.slug}) }}">{{ tag.label }}</a>
