@@ -544,7 +544,7 @@ a.original {
 .card-entry-labels a,
 .card-tag-labels a,
 .card-entry-labels-hidden a,
-#list .chip a {
+.tag-list .chip a {
   text-decoration: none;
   font-weight: normal;
   color: #fff;
@@ -786,8 +786,7 @@ article aside .tools li {
   text-decoration: none;
 }
 
-#article aside #list {
-  float: right;
+.tag-list {
   margin: 0 15px 10px;
 }
 
