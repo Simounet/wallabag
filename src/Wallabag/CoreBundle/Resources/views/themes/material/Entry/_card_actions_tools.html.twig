@@ -1,4 +1,4 @@
-<ul class="tools{{classExtra|default('')}} right">
+<ul class="tools{{classExtra|default('')}}">
     <li>
         <a title="{{ 'entry.list.toogle_as_read'|trans }}" class="tool grey-text" href="{{ path('archive_entry', { 'id': entry.id }) }}"><i class="material-icons">{% if entry.isArchived == 0 %}done{% else %}redo{% endif %}</i></a>
         <a title="{{ 'entry.list.toogle_as_star'|trans }}" class="tool grey-text" href="{{ path('star_entry', { 'id': entry.id }) }}"><i class="material-icons">{% if entry.isStarred == 0 %}star_border{% else %}star{% endif %}</i></a>
