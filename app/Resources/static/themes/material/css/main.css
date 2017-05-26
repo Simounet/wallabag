@@ -291,7 +291,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  min-height: 64px;
 }
 
 .nav-wrapper .button-collapse {
@@ -313,6 +312,7 @@ nav {
 }
 
 .nav-panels {
+  min-height: 64px;
   transition: background 0.2s ease;
 }
 
@@ -417,8 +417,9 @@ nav {
   padding: 0;
 }
 
-.side-nav a {
-  margin: 0 1rem;
+.side-nav .waves-effect.waves-effect {
+    margin: 0;
+    padding: 0 30px;
 }
 
 span.numberItems {
