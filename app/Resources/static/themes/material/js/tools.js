@@ -20,15 +20,7 @@ function initExport() {
   }
 }
 
-function initRandom() {
-  // no display if export (ie: entries) not available
-  if ($('div').is('#export')) {
-    $('#button_random').show();
-  }
-}
-
 export {
   initExport,
   initFilters,
-  initRandom,
 };
