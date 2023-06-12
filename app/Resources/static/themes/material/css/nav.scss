@@ -131,11 +131,8 @@ nav {
   margin: 0 1%;
 }
 
-.button-filters {
-  display: none;
-}
-
-.button-export {
+html:not(.js) .button-filters,
+html:not(.js) .button-export {
   display: none;
 }
 

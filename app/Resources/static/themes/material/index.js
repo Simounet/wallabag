@@ -19,6 +19,10 @@ import './css/index.scss';
 
 const mobileMaxWidth = 993;
 
+(function init() {
+  document.documentElement.classList.toggle('js');
+}());
+
 (function darkTheme() {
   const rootEl = document.querySelector('html');
   const themeDom = {
